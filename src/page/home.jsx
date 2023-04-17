@@ -1,9 +1,10 @@
 import Api from "../components/Api"
+
 export const Inicio=()=>{
     return(
         <>
         <div>
-            <input type="text" value="hola"/>
+            <p>Listado de Títulos de libros</p>
         </div>
         <Api/>
         </>

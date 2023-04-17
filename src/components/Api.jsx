@@ -1,24 +1,29 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
+import React, { useEffect ,useState} from 'react'
+import Cards from './Cards'
+
+
 const Api = () => {
+//estado de variable Libros inicializado como un array vacío
+    const [libros, setLibros] = useState([])
+    const api = 'https://www.etnassoft.com/api/v1/get/?any_tags=[html,css,javascript]'
+
+    //uso de hook para que ejecuta la función cuando un estado cambie
+    useEffect(() => {
+        fetch(api)
+            .then((res) => res.json())
+            .then((res) => { setLibros(res) })//en setLibros se guarda res
+            .catch((e) => console.log(e))
+    }, [])
+
+    return (
+    //map recorre el array Libros, i es un contador usado en Key para generar identificadores, libro.title accede a la clave titulo
+        
+        <div className='row'> {libros.map((libro, i) => (
+            <Cards title={libro.title} author={libro.author}/>
   
-    const [libros, setLibros]=useState([])
-
-    
-   const api= 'https://www.etnassoft.com/api/v1/get/?any_tags=[html,css,javascript]'
-   
-   useEffect(() => {
-    fetch(api)
-   .then((res)=>res.json())
-   .then((res)=>{setLibros(res)})
-    .catch((e)=>console.log(e))
-   }, [])
-
-  return (
-    <div> {libros.map((libro, i)=>(
-        <p key={i}>{ libro.title }</p>
-    ))}</div>
-  )
+        ))}</div>
+        
+    )
 }
 
 export default Api
