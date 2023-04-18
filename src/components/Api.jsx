@@ -15,12 +15,11 @@ const Api = () => {
             .catch((e) => console.log(e))
     }, [])
 
+
     return (
-    //map recorre el array Libros, i es un contador usado en Key para generar identificadores, libro.title accede a la clave titulo
-        
+    //map recorre el array Libros, i es un contador usado en Key para generar identificadores, libro.title accede a la clave titulo  
         <div className='row'> {libros.map((libro, i) => (
-            <Cards title={libro.title} author={libro.author}/>
-  
+            <Cards key={i} title={libro.title} author={libro.author} imagen={libro.thumbnail}/>
         ))}</div>
         
     )
