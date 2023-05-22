@@ -8,6 +8,7 @@ export const Personajes = () => {
     fetchPersonajes();
   }, []);
 
+  
   const fetchPersonajes = async () => {
     try {
       const response = await fetch("https://harry-potter-api.onrender.com/db");
