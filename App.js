@@ -2,7 +2,7 @@ import React from 'react';
 import {  StyleSheet, ImageBackground } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { HomeView, Personajes, ShowScrollView } from './src/views/Exports';
+import { HomeView, Personajes, ShowScrollView, Hechizos } from './src/views/Exports';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -13,7 +13,9 @@ export default function App() {
       <Stack.Navigator initialRouteName='Home'>
         <Stack.Screen name="home" component={HomeView} />
         <Stack.Screen name="scroll" component={ShowScrollView} />
-        <Stack.Screen name="api" component={Personajes} />
+        <Stack.Screen name="personajes" component={Personajes} />
+        <Stack.Screen name="hechizos" component={Hechizos} />
+
         </Stack.Navigator>
     
       <ImageBackground
