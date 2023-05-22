@@ -8,13 +8,8 @@ export const HomeView = ({ navigation }) => {
   const views = [
 
     { title: 'Scroll', path: 'scroll' },
-<<<<<<< HEAD
-    {title: 'Api', path: 'api' },
-    
-=======
     {title: 'Personajes', path: 'api' },
     {title: 'Hechizos', path: 'hechizos'}
->>>>>>> 598de79 (api pj y hechizos)
 
   ]
 
